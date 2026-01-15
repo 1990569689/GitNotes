@@ -1,257 +1,215 @@
-# Markdown简明语法教程
-
-**说明：**
-
-* 本教程基于Markdown语言编写，项目地址位于[Simple-Markdown-Guide](https://github.com/Melo618/Simple-Markdown-Guide)。
-* 本教程定位为基础教程，更加详细的用法可参考其他资料。
-* 本教程中代码块内的代码为Markdown的语法。
-* 本教程中部分语法使用的是[GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/)，GFM语法与标准语法在不同环境中存在解析差异，本教程在使用时会加以说明。
-* 推荐使用Haroopad(Win)、MarkdownPad(Win)和Mou(OS X)编辑器，部分编辑器中文效果欠佳，可通过自定义CSS字体解决。
-
-## 基本
-
-* Markdown是一种用来写作的轻量级标记语言。
-* 用标记语法，来代替常见的排版格式。
-* 兼容 HTML代码。
-* 特殊字符自动转换，例如`<`和`&`。
-
-## 字体
-
-* 使用星号`*`和底号`_`表示`<em>`标签。
-
-  例如：
-
-  ```
-  *斜体*
-  _斜体_
-  ```
-
-  效果：
-
-  *斜体*
-
-* 使用双星号`**`和双底号`__`表示`<strong>`标签。
-
-  例如：
-
-  ```
-  **强调**
-  __强调__
-  ```
-
-  效果：
-
-  **强调**
-
-## 换行
-
-* 单一段落用空白行。
-
-## 标题
-
-* 生成`<h1>`-`<h6>`标签，是通过在文字前面加上同等个数`#`符号来实现。
-* 出于美观，也可以使用对称的闭合式标题符号。
-
-  例如：
-
-  ```
-  ### 这是标题
-  ### 这是标题 ###
-  ```
-
-  效果：
-
-  ### 这是标题
-
-## 列表
-
-* `*`，`-`，`+`这三个符号效果都一样，这3个符号被称为Markdown列表符号。而有序列表则使用数字接着一个英文句点（数字大小并不会影响输出序列）。
-
-  例如：
-
-  ```
-  * 第一行
-  * 第二行
-  * 第三行
-  6. 第四行
-  5. 第五行
-  4. 第六行
-  ```
-
-  效果：
-
-  * 第一行
-  * 第二行
-  * 第三行
-  6. 第四行
-  5. 第五行
-  4. 第六行
-
-## 引用
-
-* `>`符号表示引用，可简写于第一行，也可以每一行都添加。
-* 区块的引用可以嵌套，只需要在层次数上加上同等数量的`>`符号。
-* 引用内可以使用其他Markdown语法，包括标题、列表、代码区块等。
-
-  例如：
-
-  ```
-  >    引用
-  >    >    引用中的引用
-  ```
-
-  效果：
-
-  >    引用
-  >    >    引用中的引用
-
-## 代码区块
-
-* <code>\`</code>是表示inline代码，4个<code> </code>（空格）来表示缩进式代码段，分别对应HTML的`<code>`，`<pre>`标签。也可以使用<code>\`\`\`</code>来表达围栏式代码块（**GFM语法**，部分编辑器不支持），并指定他的语言类型，实现语法高亮。围栏式代码块可以大量减少缩进的使用，大规模的代码块使用非常方便。
-
-  例如：
-
-  ```
-  `sort()` 函数按升序对给定数组的值排序。
-  ```
-
-  普通的缩进式代码块。
-
-  ```
-      <?php
-          $my_array = array('a' => 'Dog', 'b' => 'Cat');
-          sort($my_array);
-          print_r($my_array);
-      ?>
-  ```
-
-  带语法高亮的围栏式代码块（**GFM语法**，部分编辑器不支持）。
-
-      ```php
-      <?php
-          $my_array = array('a' => 'Dog', 'b' => 'Cat');
-          sort($my_array);
-          print_r($my_array);
-      ?>
-      ```
-
-  效果：
-
-  `sort()` 函数按升序对给定数组的值排序。
-
-  普通的缩进式代码块。
-
-      <?php
-          $my_array = array('a' => 'Dog', 'b' => 'Cat');
-          sort($my_array);
-          print_r($my_array);
-      ?>
-
-  带语法高亮的围栏式代码块（**GFM语法**，部分编辑器不支持）。
-
-  ```php
-  <?php
-      $my_array = array('a' => 'Dog', 'b' => 'Cat');
-      sort($my_array);
-      print_r($my_array);
-  ?>
-  ```
-
-## 链接
-
-* Markdown支持两种形式的链接语法：行内式和参考式两种形式。
-
-  行内式链接，是在方括号后面接圆括号即可。
-  例如：
-
-  ```
-  [Google](https://www.google.com "Google")
-  ```
-
-  效果：
-
-  [Google](https://www.google.com "Google")
-
-  参考式链接，是在链接文字的括号后面加上另一个方括号，在第二个方括号里面要填入用以辨识链接的标记。
-  例如：
-
-  ```
-  [Google][GOOGL]
-
-  [GOOGL]: https://www.google.com "Google"
-  ```
-
-  效果：
-
-  [Google][GOOGL]
-
-  [GOOGL]: https://www.google.com "Google"
-
-## 图片
-
-* Markdown使用一种和链接很相似的语法来标记图片，只是多了一个`!`在最前面，同样也允许两种样式：行内式和参考式。
-* 目前为止，Markdown还没有办法指定图片的宽高，如果你需要的话，你可以使用普通的`<img>`标签。
-
-  行内式链接，是在方括号后面接圆括号即可。
-  例如：
-
-  ```
-  ![Wikipedia](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png "Wikipedia")
-  ```
-
-  效果：
-
-  ![Wikipedia](https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png "Wikipedia")
-
-## 分隔线
-
-* 使用三个以上的`*`、`-`来建立一个分隔线，行内不能有其他字符。
-
-  例如：
-
-  ```
-  * * *
-  ***
-  - - -
-  ---
-  ```
-
-  效果：
-
-  上文
-  - - -
-  下文
-
-## 表格
-
-* Markdown使用`|`和`-`来绘制表格，`:`可控制左对齐、右对齐及居中。
-
-  例如：
-
-  ```
-  | Title   | Description                        |
-  | :------ | :--------------------------------: |
-  | Version | 0.0.1                              |
-  | Editor  | [Melo618](mailto:Editor@Email.com) |
-  ```
-
-  效果：
-
-  | Title   | Description                        |
-  | :------ | :--------------------------------: |
-  | Version | 0.0.1                              |
-  | Editor  | [Melo618](mailto:Editor@Email.com) |
-
-## 特殊符号
-
-* Markdown利用`\`字符来转义一些在语法中有特殊意义的符号。
-
-## 推荐阅读
-
-* [Markdown语法说明（简体中文版）](http://wowubuntu.com/markdown/index.html)
-* [Markdown Syntax Documentation](http://daringfireball.net/projects/markdown/syntax)
-* [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown)
-
-## License
-
-  Copyright © 2014-2018, Melo Chan. [MIT License](http://opensource.org/licenses/MIT).
+# 无尽浏览器 (VeryWeb)
+
+!
+
+**轻量 · 无广告 · 高定制化**的开源安卓浏览器，基于GPL-3.0协议发布
+
+[English](./README.md) | 简体中文
+
+## ✨ 核心特色
+
+### 🚀 极速体验
+- **返回不重载**：采用`ViewPager`双层嵌套技术，实现页面无刷新返回
+- **解决301/302重载**：优化重定向流程，减少页面重复加载
+
+### 📚 本地数据管理
+- **多级书签系统**：文件夹嵌套结构，支持HTML书签导入
+- **本地历史记录**：使用SQLite数据库存储浏览历史
+- **小纸条功能**：轻量级本地笔记系统
+
+### 🎨 深度UI定制
+```html
+<!-- 自定义主页示例 -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的主页</title>
+    <style>
+        :root { --primary-color: #4CAF50; }
+        .header { background: var(--primary-color); }
+    </style>
+</head>
+<body>
+    <h1>欢迎使用无尽浏览器</h1>
+</body>
+</html>
+```
+- 自定义主页（支持本地HTML/URL）
+- 可配置头部文字、头像、CSS样式
+- 自定义背景图片
+
+### 🌙 智能浏览辅助
+- **夜间模式**：通过JavaScript注入实现页面暗色转换
+- **资源嗅探**：自动提取页面中的视频/图片资源
+- **油猴脚本支持**：兼容用户脚本扩展
+
+### 🛠️ 实用工具
+- **网页保存**：支持MHT/PDF格式导出
+- **扫码功能**：快速识别二维码
+- **下载管理器**：内置文件下载功能
+- **长按增强**：
+  - 图片/链接特殊操作
+  - 文本选择优化
+
+## 📦 安装使用
+
+### 要求环境
+- Android 5.0 (API 21) 及以上
+- 最小支持屏幕尺寸：320×480 dp
+
+### 下载安装
+[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/1990569689/VeryWeb/releases/latest)
+
+或从源码构建：
+```bash
+git clone https://github.com/yourusername/veryweb.git
+cd veryweb
+./gradlew assembleDebug
+```
+
+## 🧩 功能演示
+| 书签管理 | 夜间模式 | 资源嗅探 |
+|----------|----------|----------|
+| ![书签管理](screenshots/bookmarks.gif) | ![夜间模式](screenshots/nightmode.gif) | ![资源嗅探](screenshots/resources.gif) |
+
+| UI定制 | 网页保存 | UA切换 |
+|--------|----------|--------|
+| ![UI定制](screenshots/customize.jpg) | ![网页保存](screenshots/save_as_pdf.jpg) | ![UA切换](screenshots/ua_switch.jpg) |
+
+## 🤝 参与贡献
+欢迎通过以下方式参与项目：
+1. 提交Issue报告问题或建议
+2. Fork仓库并提交Pull Request
+3. 完善项目文档
+4. 帮助翻译多语言版本
+
+贡献前请阅读[贡献指南](CONTRIBUTING.md)
+
+## 📄 开源协议
+```text
+  GNU GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+                            Preamble
+
+  The GNU General Public License is a free, copyleft license for
+software and other kinds of works.
+
+  The licenses for most software and other practical works are designed
+to take away your freedom to share and change the works.  By contrast,
+the GNU General Public License is intended to guarantee your freedom to
+share and change all versions of a program--to make sure it remains free
+software for all its users.  We, the Free Software Foundation, use the
+GNU General Public License for most of our software; it applies also to
+any other work released this way by its authors.  You can apply it to
+your programs, too.
+
+  When we speak of free software, we are referring to freedom, not
+price.  Our General Public Licenses are designed to make sure that you
+have the freedom to distribute copies of free software (and charge for
+them if you wish), that you receive source code or can get it if you
+want it, that you can change the software or use pieces of it in new
+free programs, and that you know you can do these things.
+
+  To protect your rights, we need to prevent others from denying you
+these rights or asking you to surrender the rights.  Therefore, you have
+certain responsibilities if you distribute copies of the software, or if
+you modify it: responsibilities to respect the freedom of others.
+
+  For example, if you distribute copies of such a program, whether
+gratis or for a fee, you must pass on to the recipients the same
+freedoms that you received.  You must make sure that they, too, receive
+or can get the source code.  And you must show them these terms so they
+know their rights.
+
+  Developers that use the GNU GPL protect your rights with two steps:
+(1) assert copyright on the software, and (2) offer you this License
+giving you legal permission to copy, distribute and/or modify it.
+
+  For the developers' and authors' protection, the GPL clearly explains
+that there is no warranty for this free software.  For both users' and
+authors' sake, the GPL requires that modified versions be marked as
+changed, so that their problems will not be attributed erroneously to
+authors of previous versions.
+
+  Some devices are designed to deny users access to install or run
+modified versions of the software inside them, although the manufacturer
+can do so.  This is fundamentally incompatible with the aim of
+protecting users' freedom to change the software.  The systematic
+pattern of such abuse occurs in the area of products for individuals to
+use, which is precisely where it is most unacceptable.  Therefore, we
+have designed this version of the GPL to prohibit the practice for those
+products.  If such problems arise substantially in other domains, we
+stand ready to extend this provision to those domains in future versions
+of the GPL, as needed to protect the freedom of users.
+
+  Finally, every program is threatened constantly by software patents.
+States should not allow patents to restrict development and use of
+software on general-purpose computers, but in those that do, we wish to
+avoid the special danger that patents applied to a free program could
+make it effectively proprietary.  To prevent this, the GPL assures that
+patents cannot be used to render the program non-free.
+
+  The precise terms and conditions for copying, distribution and
+modification follow.
+
+                       TERMS AND CONDITIONS
+
+  0. Definitions.
+
+  "This License" refers to version 3 of the GNU General Public License.
+
+  "Copyright" also means copyright-like laws that apply to other kinds of
+works, such as semiconductor masks.
+
+  "The Program" refers to any copyrightable work licensed under this
+License.  Each licensee is addressed as "you".  "Licensees" and
+"recipients" may be individuals or organizations.
+
+  To "modify" a work means to copy from or adapt all or part of the work
+in a fashion requiring copyright permission, other than the making of an
+exact copy.  The resulting work is called a "modified version" of the
+earlier work or a work "based on" the earlier work.
+
+  A "covered work" means either the unmodified Program or a work based
+on the Program.
+
+  To "propagate" a work means to do anything with it that, without
+permission, would make you directly or secondarily liable for
+infringement under applicable copyright law, except executing it on a
+computer or modifying a private copy.  Propagation includes copying,
+distribution (with or without modification), making available to the
+public, and in some countries other activities as well.
+
+  To "convey" a work means any kind of propagation that enables other
+parties to make or receive copies.  Mere interaction with a user through
+a computer network, with no transfer of a copy, is not conveying.
+
+  An interactive user interface displays "Appropriate Legal Notices"
+to the extent that it includes a convenient and prominently visible
+feature that (1) displays an appropriate copyright notice, and (2)
+tells the user that there is no warranty for the work (except to the
+extent that warranties are provided), that licensees may convey the
+work under this License, and how to view a copy of this License.  If
+the interface presents a list of user commands or options, such as a
+menu, a prominent item in the list meets this criterion.
+```
+项目基于 **GPL-3.0** 协议开源 - 查看完整[许可证文件](LICENSE)
+
+## 📬 联系我们
+- 项目主页：https://github.com/1990569689/VeryWeb
+- 问题反馈：https://github.com/1990569689/VeryWeb/issues
+- 邮箱：1990569689@qq.com
+---
+
+**让浏览回归纯粹** - 无尽浏览器团队 ✨
+### 使用的第三方库 
+[QRCodeView](https://github.com/0xZhangKe/QRCodeView)
+
+[jiaozivideoplayer](https://github.com/lipangit/JiaoZiVideoPlayer)
+
+[webview-gm](https://github.com/wbayer/webview-gm)
