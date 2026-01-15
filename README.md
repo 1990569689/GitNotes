@@ -1,7 +1,5 @@
 # 无尽浏览器 (VeryWeb)
 
-!
-
 **轻量 · 无广告 · 高定制化**的开源安卓浏览器，基于GPL-3.0协议发布
 
 [English](./README.md) | 简体中文
@@ -58,7 +56,7 @@
 - 最小支持屏幕尺寸：320×480 dp
 
 ### 下载安装
-[![Download APK](https://img.shields.io/badge/Download-APK-brightgreen?style=for-the-badge&logo=android)](https://github.com/1990569689/VeryWeb/releases/latest)
+
 
 或从源码构建：
 ```bash
